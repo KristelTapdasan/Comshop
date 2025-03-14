@@ -6,6 +6,7 @@
 package User;
 
 import computershop.loginForm;
+import config.Session;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,28 +32,58 @@ public class userDashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         Container = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        iddisplay = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        acc_name = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         Container.setBackground(new java.awt.Color(255, 255, 255));
         Container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+        });
+        jPanel1.setLayout(null);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396-removebg-preview.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 200, 220);
+
+        jLabel7.setFont(new java.awt.Font("Bookman Old Style", 1, 20)); // NOI18N
+        jLabel7.setText("ACCOUNT");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(50, 220, 110, 24);
+
+        Container.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 200, 260));
+
         Header.setBackground(new java.awt.Color(51, 51, 0));
         Header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Bookman Old Style", 3, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 204));
-        jLabel4.setText("USER DASHBOARD");
-        Header.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 390, -1));
+        iddisplay.setFont(new java.awt.Font("Bookman Old Style", 3, 30)); // NOI18N
+        iddisplay.setForeground(new java.awt.Color(255, 255, 204));
+        iddisplay.setText("USER ID:");
+        Header.add(iddisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 280, 60));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 0));
+        jButton1.setBackground(new java.awt.Color(255, 255, 204));
         jButton1.setFont(new java.awt.Font("Bookman Old Style", 3, 24)); // NOI18N
         jButton1.setText("LOG-OUT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +92,11 @@ public class userDashboard extends javax.swing.JFrame {
             }
         });
         Header.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, 160, 40));
+
+        jLabel5.setFont(new java.awt.Font("Bookman Old Style", 3, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel5.setText("USER DASHBOARD");
+        Header.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 390, -1));
 
         Container.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 110));
 
@@ -74,7 +110,12 @@ public class userDashboard extends javax.swing.JFrame {
         Container.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 110, 250, 500));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396-removebg-preview.png"))); // NOI18N
-        Container.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 130, 280, 250));
+        Container.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 120, 280, 250));
+
+        acc_name.setFont(new java.awt.Font("Bookman Old Style", 3, 20)); // NOI18N
+        acc_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        acc_name.setText("USER");
+        Container.add(acc_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 260, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,7 +133,7 @@ public class userDashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to logout?", "Logout Confirmation", JOptionPane.YES_NO_OPTION);
+ int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to logout?", "LOGOUT", JOptionPane.YES_NO_OPTION);
 
     if (confirm == JOptionPane.YES_OPTION) {
            // Clear user session (if applicable)
@@ -105,6 +146,26 @@ public class userDashboard extends javax.swing.JFrame {
         // Close current dashboard
         this.dispose();
     }    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        Session sess = Session.getInstance();
+        if(sess.getUId()== 0){
+             JOptionPane.showMessageDialog(null, "No account, Login First!");
+             loginForm lfr = new loginForm();
+             lfr.setVisible(true);
+             this.dispose();      
+        }else{
+             acc_name.setText(""+sess.getUsername());
+             iddisplay.setText("USER ID:"+sess.getUId());
+
+        }
+    }//GEN-LAST:event_formWindowActivated
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+        accountDetails accd = new accountDetails();
+        accd.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jPanel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -144,11 +205,16 @@ public class userDashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Container;
     private javax.swing.JPanel Header;
+    private javax.swing.JLabel acc_name;
+    private javax.swing.JLabel iddisplay;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

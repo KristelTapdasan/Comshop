@@ -5,7 +5,9 @@
  */
 package Admin;
 
+import User.accountDetails;
 import computershop.loginForm;
+import config.Session;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,19 +33,57 @@ public class adminDashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         Container = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        acc_name = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         Container.setBackground(new java.awt.Color(255, 255, 255));
         Container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setLayout(null);
+        Container.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 230, 200, 260));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
+        jPanel4.setLayout(null);
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396-removebg-preview.png"))); // NOI18N
+        jPanel4.add(jLabel8);
+        jLabel8.setBounds(10, 0, 180, 220);
+
+        jLabel9.setFont(new java.awt.Font("Bookman Old Style", 1, 20)); // NOI18N
+        jLabel9.setText("ACCOUNT");
+        jPanel4.add(jLabel9);
+        jLabel9.setBounds(50, 220, 110, 24);
+
+        Container.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 200, 260));
 
         Header.setBackground(new java.awt.Color(51, 51, 0));
         Header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -53,7 +93,7 @@ public class adminDashboard extends javax.swing.JFrame {
         jLabel1.setText("ADMIN DASHBOARD");
         Header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 390, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(255, 255, 204));
         jButton1.setFont(new java.awt.Font("Bookman Old Style", 3, 24)); // NOI18N
         jButton1.setText("LOG-OUT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -65,8 +105,36 @@ public class adminDashboard extends javax.swing.JFrame {
 
         Container.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 110));
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Container.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 109, -1, 390));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+        });
+        jPanel1.setLayout(null);
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396-removebg-preview.png"))); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(10, 0, 180, 220);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(null);
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396-removebg-preview.png"))); // NOI18N
+        jPanel3.add(jLabel6);
+        jLabel6.setBounds(10, 0, 180, 220);
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(0, 0, 0, 0);
+
+        jLabel7.setFont(new java.awt.Font("Bookman Old Style", 1, 20)); // NOI18N
+        jLabel7.setText("USER");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(70, 220, 60, 24);
+
+        Container.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 200, 260));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Cream and Brown Retro Cafe Logo.png"))); // NOI18N
         Container.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 500, 500));
@@ -79,7 +147,12 @@ public class adminDashboard extends javax.swing.JFrame {
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/istockphoto-1192884194-170667a-removebg-preview.png"))); // NOI18N
-        Container.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 200, 330));
+        Container.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 200, 310));
+
+        acc_name.setFont(new java.awt.Font("Bookman Old Style", 3, 20)); // NOI18N
+        acc_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        acc_name.setText("ADMIN");
+        Container.add(acc_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 260, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,7 +170,7 @@ public class adminDashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to logout?", "Logout Confirmation", JOptionPane.YES_NO_OPTION);
+       int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to logout?", "LOGOUT", JOptionPane.YES_NO_OPTION);
 
     if (confirm == JOptionPane.YES_OPTION) {
            // Clear user session (if applicable)
@@ -111,6 +184,24 @@ public class adminDashboard extends javax.swing.JFrame {
         this.dispose();
     }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+        usersForm usf = new usersForm();
+        usf.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jPanel1MouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        Session sess = Session.getInstance();
+        acc_name.setText(""+sess.getUsername());
+        
+    }//GEN-LAST:event_formWindowActivated
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        accountDetails accd = new accountDetails();
+        accd.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jPanel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -150,12 +241,21 @@ public class adminDashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Container;
     private javax.swing.JPanel Header;
+    private javax.swing.JLabel acc_name;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
 }
