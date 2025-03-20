@@ -83,6 +83,7 @@ public class usersForm extends javax.swing.JFrame {
         Container.setBackground(new java.awt.Color(255, 255, 255));
         Container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        usersTable.setBackground(new java.awt.Color(255, 255, 204));
         jScrollPane1.setViewportView(usersTable);
 
         Container.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 640, 460));
@@ -252,7 +253,6 @@ public class usersForm extends javax.swing.JFrame {
             crf.username.setText(""+rs.getString("u_username"));
             crf.email.setText(""+rs.getString("u_email"));
             crf.cn.setText(""+rs.getString("u_contact"));
-            crf.password.setText(""+rs.getString("u_password"));
             crf.ut.setSelectedItem(""+rs.getString("u_usertype"));
             crf.us.setSelectedItem(""+rs.getString("u_status"));
             crf.add.setEnabled(false);
