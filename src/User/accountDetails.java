@@ -73,6 +73,7 @@ public class accountDetails extends javax.swing.JFrame {
         Container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         back.setBackground(new java.awt.Color(255, 255, 204));
+        back.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 51, 0)));
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backMouseClicked(evt);
@@ -88,6 +89,7 @@ public class accountDetails extends javax.swing.JFrame {
         Container.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 110, 50));
 
         save.setBackground(new java.awt.Color(255, 255, 204));
+        save.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 51, 0)));
         save.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saveMouseClicked(evt);
@@ -128,6 +130,7 @@ public class accountDetails extends javax.swing.JFrame {
 
         ut.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "USER" }));
+        ut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 0), 2));
         Container.add(ut, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, 290, 50));
 
         jLabel7.setFont(new java.awt.Font("Bookman Old Style", 3, 18)); // NOI18N
@@ -135,6 +138,7 @@ public class accountDetails extends javax.swing.JFrame {
         Container.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 120, 30));
 
         email.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        email.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 0), 2));
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
@@ -143,9 +147,11 @@ public class accountDetails extends javax.swing.JFrame {
         Container.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 290, 50));
 
         cn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        cn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 0), 2));
         Container.add(cn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 290, 50));
 
         un.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        un.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 0), 2));
         un.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 unActionPerformed(evt);

@@ -83,6 +83,7 @@ public class changePass extends javax.swing.JFrame {
         Container.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 160, 30));
 
         back.setBackground(new java.awt.Color(255, 255, 204));
+        back.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 51, 0)));
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backMouseClicked(evt);
@@ -98,6 +99,7 @@ public class changePass extends javax.swing.JFrame {
         Container.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 110, 50));
 
         save.setBackground(new java.awt.Color(255, 255, 204));
+        save.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 51, 0)));
         save.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saveMouseClicked(evt);
@@ -129,6 +131,7 @@ public class changePass extends javax.swing.JFrame {
         Container.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 480, 110, 50));
 
         conpass.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        conpass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 0), 2));
         conpass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 conpassActionPerformed(evt);
@@ -137,6 +140,7 @@ public class changePass extends javax.swing.JFrame {
         Container.add(conpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, 290, 50));
 
         oldpass.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        oldpass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 0), 2));
         oldpass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 oldpassActionPerformed(evt);
@@ -145,6 +149,7 @@ public class changePass extends javax.swing.JFrame {
         Container.add(oldpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 290, 50));
 
         newpass.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        newpass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 0), 2));
         newpass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newpassActionPerformed(evt);

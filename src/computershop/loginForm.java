@@ -91,6 +91,7 @@ public class loginForm extends javax.swing.JFrame {
         username = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         login = new javax.swing.JButton();
@@ -109,10 +110,11 @@ public class loginForm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Bookman Old Style", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 204));
-        jLabel1.setText("COMPUTER SHOP MANAGEMENT SYSTEM");
-        Header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("COMPUTER CAFE MANAGEMENT SYSTEM");
+        Header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, -1));
 
-        Container.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 110));
+        Container.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 110));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -136,6 +138,7 @@ public class loginForm extends javax.swing.JFrame {
         Container.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 480, 120, 10));
 
         username.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 0), 2));
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
@@ -148,6 +151,15 @@ public class loginForm extends javax.swing.JFrame {
         jLabel7.setText("USERNAME:");
         Container.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 100, 10));
 
+        jLabel9.setFont(new java.awt.Font("Arial", 3, 13)); // NOI18N
+        jLabel9.setText("Forgot Password?");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
+        Container.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 450, 150, 20));
+
         jLabel8.setFont(new java.awt.Font("Arial", 3, 13)); // NOI18N
         jLabel8.setText("New User? Click here to sign up!");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -159,6 +171,7 @@ public class loginForm extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jButton1.setText("EXIT");
+        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 51, 0)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -168,6 +181,7 @@ public class loginForm extends javax.swing.JFrame {
 
         login.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         login.setText("LOGIN");
+        login.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 51, 0)));
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
@@ -176,6 +190,7 @@ public class loginForm extends javax.swing.JFrame {
         Container.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 540, 100, -1));
 
         password.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        password.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 0), 2));
         Container.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, 200, 30));
 
         showpass.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -256,6 +271,13 @@ public class loginForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_showpassActionPerformed
 
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        forgotPassword fp = new forgotPassword();
+        fp.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_jLabel9MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -303,6 +325,7 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton login;
     private javax.swing.JPasswordField password;
